@@ -6,3 +6,7 @@ x readFromFile lança uma exceção quando o arquivo não existe
 --- Abstract Interface
 x Pode chamar AddExecuter
 x AddExecuter chama AbstractAdder devidamente e retorna o valor correto
+
+--- Network Connection
+x Pode chamar getURL
+x getURL chama HTTP corretamente e retorna a resposta correta

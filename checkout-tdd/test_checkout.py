@@ -1,4 +1,7 @@
+from unittest.mock import MagicMock
+
 import pytest
+
 from checkout import Checkout
 
 
@@ -36,3 +39,15 @@ def test_canApplyDiscountRule(checkout):
 def test_exceptionWithBadItem(checkout):
     with pytest.raises(Exception):
         checkout.addItem("c")
+
+
+def test_canCallReadPricesFile(checkout, monkeypatch):
+    mock_file = MagicMock()
+    mock_file.__enter__.return_value.__iter__.return_value = ["c 3"]
+    mock_open = MagicMock(return_value=mock_file)
+    monkeypatch.setattr("builtins.open", mock_open)
+    checkout.readPricesFile("testfile")
+    checkout.addItem("c")
+    result = checkout.calculateTotal()
+    mock_open.assert_called_once_with("testfile")
+    assert result == 3

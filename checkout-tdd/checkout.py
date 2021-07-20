@@ -53,3 +53,9 @@ class Checkout:
         for item, cnt in self.items.items():
             total += self.canCalculateItemTotal(item, cnt)
         return total
+
+    def readPricesFile(self, filename):
+        with open(filename) as inFile:
+            for line in inFile:
+                tokens = line.split()
+                self.addItemPrice(tokens[0], int(tokens[1]))

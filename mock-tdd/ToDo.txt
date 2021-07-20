@@ -1,3 +1,8 @@
+--- Line Reader
 x Pode chamar readFromFile
-- readFromFile retorna string correta
-- readFromFile lança uma exceção quando o arquivo não existe
+x readFromFile retorna string correta
+x readFromFile lança uma exceção quando o arquivo não existe
+
+--- Abstract Interface
+x Pode chamar AddExecuter
+x AddExecuter chama AbstractAdder devidamente e retorna o valor correto

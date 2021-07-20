@@ -1,0 +1,8 @@
+x Pode criar uma instancia da classe Checkout
+x Pode adicionar item price
+x Pode add um item
+x Pode calcular o valor total
+x Pode adicionar multiplos items e receber o total
+x Pode adicionar regras de descontos
+x Pode aplicar regras de descontos ao valor total
+x Item sem preço retorna uma exceção

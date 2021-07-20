@@ -1,0 +1,3 @@
+- Pode chamar readFromFile
+- readFromFile retorna string correta
+- readFromFile lança uma exceção quando o arquivo não existe
